@@ -8,7 +8,7 @@ mydb = mysql.connector.connect(
 )
 mycursor=mydb.cursor(dictionary=True)
 sql="insert into assets (Manufacture_Brand,Cost,Invoice_no) values(%s,%s,%s)"
-val =['Samsung tv',35000,'2435']
+val =['Samsung tablet',25000,'2635']
 mycursor.execute(sql,val)
 
 sql_query="select * from assets"
@@ -19,3 +19,4 @@ mydb.commit()
 print("Data",mycursor.rowcount)
 print(records)
 mycursor.close()
+mydb.close()
